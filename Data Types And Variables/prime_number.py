@@ -1,4 +1,3 @@
-number = int(input())
 count = 0
 result = None
 for i in range(1, number + 1):

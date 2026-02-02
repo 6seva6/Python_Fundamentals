@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/puthon_fundamentals.iml" filepath="$PROJECT_DIR$/.idea/puthon_fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Python_Fundamentals.iml" filepath="$PROJECT_DIR$/.idea/Python_Fundamentals.iml" />
     </modules>
   </component>
 </project>
