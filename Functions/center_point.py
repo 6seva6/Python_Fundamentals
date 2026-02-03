@@ -4,6 +4,7 @@ x2 = input()
 y2 = input()
 
 def value_type(x1_,y1_,x2_,y2_):
+    """Returns converted list with correct value types int or float for main function"""
     result = [x1_,y1_,x2_,y2_]
     index = 0
     for i in result:
@@ -15,6 +16,7 @@ def value_type(x1_,y1_,x2_,y2_):
     return result
 
 def closest_point(x1_,y1_,x2_,y2_):
+    """Returns coordinates for closest point in list"""
     result = None
     values = value_type(x1_,y1_,x2_,y2_)
     point_1 = abs(values[0]) + abs(values[1])
