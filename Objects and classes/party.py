@@ -10,5 +10,5 @@ while True:
         break
     party.names.append(command)
 
-print(f"Going: {' '.join(party.names)}")
+print(f"Going: {', '.join(party.names)}")
 print(f"Total: {len(party.names)}")
