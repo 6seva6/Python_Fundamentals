@@ -18,11 +18,17 @@ def plunder(cities_, args_):
     if cities_[robed_city][0] <= 0 or cities_[robed_city][1] <= 0:
         del cities_[robed_city]
         return cities_, f'{robed_city} plundered! {stolen_gold} gold stolen, {killed_people} citizens killed.', f'{robed_city} has been wiped off the map!'
-    else:
-        return cities_, f'{robed_city} plundered! {stolen_gold} gold stolen, {killed_people} citizens killed.', None
+
+    return cities_, f'{robed_city} plundered! {stolen_gold} gold stolen, {killed_people} citizens killed.', None
 
 def prosper(cities_, args_):
-    pass
+    city, returned_gold = args_
+    if returned_gold < 0:
+        print(f'Gold added cannot be a negative number!')
+        return cities_, None, None
+
+    cities_[city][1] += returned_gold
+    return cities_, f'{returned_gold} gold added to the city treasury. {city} now has {cities_[city][1]} gold.', None
 
 instructions_for_commands = {
     'Plunder' : plunder,
@@ -40,5 +46,12 @@ while (command:= input()) != 'End':
             args.append(commands[i])
 
     cities, message1, message2 = instructions_for_commands[command](cities, args)
-    print(message1)
-    print(cities)
+    if message1:
+        print(message1)
+    if message2:
+        print(message2)
+
+print(f'Ahoy, Captain! There are {len(cities)} wealthy settlements to go to:')
+
+for key, value in cities.items():
+    print(f'{key} -> Population: {value[0]} citizens, Gold: {value[1]} kg')
